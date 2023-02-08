@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, ForeignKey
 from .declarative_base import Base
 
 class Interpreter(Base):
@@ -7,3 +7,4 @@ class Interpreter(Base):
   id = Column(Integer, primary_key=True)
   name = Column(String)
   curiosities_text = Column(String)
+  song = Column(Integer, ForeignKey('song.id'))
